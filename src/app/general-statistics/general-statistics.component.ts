@@ -9,7 +9,13 @@ import { ActivatedRoute } from '@angular/router';
 export class GeneralStatisticsComponent implements OnInit {
 
   statistics:any[];
-
+  options = [
+    {value:'setups', viewValue:"Setups"},
+    {value:'datacenters', viewValue:"Data Centers"},
+    {value:'clusters', viewValue:"Clusters"},
+    {value:'hosts', viewValue:"Hosts"},
+  ];
+  
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {

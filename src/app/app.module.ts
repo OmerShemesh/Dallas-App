@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { MaterialModule } from '@angular/material';
 
 //routes
 import { RouterModule } from '@angular/router';
@@ -21,7 +22,8 @@ import { GeneralStatisticsComponent, GeneralStatisticsResolver } from './general
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MaterialModule
   ],
   providers: [StatisticsService,GeneralStatisticsResolver],
   bootstrap: [AppComponent]

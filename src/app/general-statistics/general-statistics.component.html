@@ -1,6 +1,10 @@
-<select (change)="onChange($event.target.value)">
+<!--<select (change)="onChange($event.target.value)">
     <option>Setups</option>
     <option>Data Centers</option> 
     <option>Clusters</option>
     <option>Hosts</option>
-</select>
+</select>-->
+
+<md-select placeholder="Statistics For">
+    <md-option *ngFor="let option of options" (change)="onChange(option.value)">{{option.viewValue}}</md-option>
+</md-select>
