@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http,Response } from '@angular/http';
+import { Http,Response,RequestOptions, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -10,10 +10,29 @@ export class StatisticsService {
   private API_URL = 'http://localhost:5000';
   constructor(private http:Http) { }
 
-  getHostsStatistics():Observable<any>{
-    return this.http.get(this.API_URL + '/hosts/statistics')
+  getGeneralStatistics(statsFor: string):Observable<any>{
+
+    let params: URLSearchParams = new URLSearchParams();
+    let requestOptions: RequestOptions = new RequestOptions();
+
+    if(statsFor === "")
+    {
+      return this.http.get(this.API_URL + '/setups/statistics')
                 .map((response:Response) => response.json())
                 .catch(this.handleError);
+    }
+    else
+    {
+      params.set('stats_for',statsFor);
+
+      requestOptions.search = params;
+
+      return this.http.get(this.API_URL + '/setups/statistics',requestOptions)
+                .map((response:Response) => response.json())
+                .catch(this.handleError);
+    }
+
+    
   }
 
   private handleError (error: Response | any) {
