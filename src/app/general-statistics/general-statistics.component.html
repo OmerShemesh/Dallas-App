@@ -1,10 +1,77 @@
-<!--<select (change)="onChange($event.target.value)">
-    <option>Setups</option>
-    <option>Data Centers</option> 
-    <option>Clusters</option>
-    <option>Hosts</option>
-</select>-->
-
-<md-select placeholder="Statistics For">
-    <md-option *ngFor="let option of options" (change)="onChange(option.value)">{{option.viewValue}}</md-option>
+<md-select placeholder="Statistics For" [(ngModel)]="selectedOption" (change)="onOptionChange()">
+    <md-option *ngFor="let option of options" [value]="option.value">{{option.viewValue}}</md-option>
 </md-select>
+
+
+<md-card *ngIf="selectedOption == 'setups'" class="stats-card">
+    <md-card-content>
+        <md-list>
+            <h3 md-subheader>Facts</h3>
+            <md-list-item>
+                <p>Data about {{statistics.setups_count}} oVirt Setups is currently stored in the system.</p>
+            </md-list-item>
+            <md-list-item>
+                <p>On average, each oVirt Setup contains {{statistics.average_dcs_count}} Data Centers.</p>
+            </md-list-item>
+        </md-list>
+    </md-card-content>
+</md-card>
+
+<md-card *ngIf="selectedOption == 'datacenters'" class="stats-card">
+    <md-list>
+        <h3 md-subheader>Facts</h3>
+        <md-list-item>
+            <p>Data about {{statistics.datacenters_count}} Data Centers is currently stored in the system.</p>
+        </md-list-item>
+        <md-list-item>
+            <p>On average, each Data Center contains {{statistics.average_clusters_count}} Clusters</p>
+        </md-list-item>
+    </md-list>
+</md-card>
+
+<md-card *ngIf="selectedOption == 'clusters'" class="stats-card">
+
+    <md-card-content>
+
+
+        <md-list>
+            <h3 md-subheader>Facts</h3>
+            <md-list-item>
+                <p>Data about {{statistics.clusters_count}} Clusters is currently stored in the system.</p>
+            </md-list-item>
+            <md-list-item>
+                <p>On average, each Cluster contains {{statistics.average_hosts_count}} Hosts</p>
+            </md-list-item>
+            <md-list-item>
+                <p>On average, each Cluster contains {{statistics.average_vms_count}} Virtual Machines</p>
+            </md-list-item>
+        </md-list>
+    </md-card-content>
+</md-card>
+
+<md-card *ngIf="selectedOption == 'hosts'" class="stats-card">
+    <md-card-content>
+
+
+        <md-list>
+            <h3 md-subheader>Facts</h3>
+            <md-list-item>
+                <p>Data about {{statistics.hosts_count}} Hosts is currently stored in the system.</p>
+            </md-list-item>
+            <md-list-item>
+                <p>On average, on each Host {{statistics.average_running_vms}} Virtual Machines are running.</p>
+            </md-list-item>
+            <h3 md-subheader>Charts</h3>
+        </md-list>
+        <canvas baseChart width=326 height=240 style='width:326px;height:240px' [labels]="['Intel Hosts','AMD Hosts','IBM Hosts']"
+            [data]="[statistics.intel_hosts, statistics.amd_hosts, statistics.ibm_hosts]" [chartType]="'pie'">
+        </canvas>
+
+
+
+    </md-card-content>
+
+
+
+
+</md-card>

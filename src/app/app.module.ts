@@ -13,6 +13,8 @@ import { AppComponent } from './app.component';
 import { StatisticsService } from './statistics.service';
 import { GeneralStatisticsComponent, GeneralStatisticsResolver } from './general-statistics';
 
+import { ChartsModule } from 'ng2-charts/ng2-charts';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,8 @@ import { GeneralStatisticsComponent, GeneralStatisticsResolver } from './general
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    MaterialModule
+    MaterialModule,
+    ChartsModule
   ],
   providers: [StatisticsService,GeneralStatisticsResolver],
   bootstrap: [AppComponent]

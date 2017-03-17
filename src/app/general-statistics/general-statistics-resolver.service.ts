@@ -8,7 +8,7 @@ export class GeneralStatisticsResolver implements Resolve<any>{
     constructor(private statisticsService: StatisticsService){}
 
     resolve() {
-        return this.statisticsService.getGeneralStatistics("datacenters");
+        return this.statisticsService.getGeneralStatistics("setups");
     }
 
 }

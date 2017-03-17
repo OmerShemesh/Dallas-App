@@ -6,7 +6,8 @@
   flex: 1 1 auto;
 }
 
-.spacer{
+.inline-box{
     margin: 50px;
-    height: 100px;
+    display: inline-flex;
 }
+

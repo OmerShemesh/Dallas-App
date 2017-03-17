@@ -17,7 +17,7 @@ export class StatisticsService {
 
     if(statsFor === "")
     {
-      return this.http.get(this.API_URL + '/setups/statistics')
+      return this.http.get(this.API_URL + '/statistics/general')
                 .map((response:Response) => response.json())
                 .catch(this.handleError);
     }
@@ -27,7 +27,7 @@ export class StatisticsService {
 
       requestOptions.search = params;
 
-      return this.http.get(this.API_URL + '/setups/statistics',requestOptions)
+      return this.http.get(this.API_URL + '/statistics/general',requestOptions)
                 .map((response:Response) => response.json())
                 .catch(this.handleError);
     }
