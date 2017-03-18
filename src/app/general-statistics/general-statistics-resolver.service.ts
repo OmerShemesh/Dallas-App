@@ -10,5 +10,6 @@ export class GeneralStatisticsResolver implements Resolve<any>{
     resolve() {
         return this.statisticsService.getGeneralStatistics("setups");
     }
+    
 
 }

@@ -33,4 +33,5 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
   providers: [StatisticsService,GeneralStatisticsResolver],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

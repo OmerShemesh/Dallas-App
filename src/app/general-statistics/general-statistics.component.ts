@@ -13,7 +13,7 @@ export class GeneralStatisticsComponent implements OnInit {
   statistics: any;
   labels = [];
   data = [];
-
+  ready: boolean = false;
   chartOptions =  {
           tooltips: {
             mode: 'label',
@@ -27,11 +27,14 @@ export class GeneralStatisticsComponent implements OnInit {
           }
   };
 
+
   options = [
     { value: 'setups', viewValue: "Setups" },
     { value: 'datacenters', viewValue: "Data Centers" },
     { value: 'clusters', viewValue: "Clusters" },
     { value: 'hosts', viewValue: "Hosts" },
+    { value: 'vms', viewValue: "Virtual Machines" },
+    { value: 'storage', viewValue: "Storage" }
   ];
 
   selectedOption: string = "setups";
@@ -39,18 +42,39 @@ export class GeneralStatisticsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private statisticsService: StatisticsService) { }
 
   onOptionChange() {
+      this.ready = false;
+      this.data = [];
+      this.labels = [];
+      this.statisticsService.getGeneralStatistics(this.selectedOption).subscribe(statistics => {
+       
+        this.statistics = statistics;
 
-    this.statisticsService.getGeneralStatistics(this.selectedOption).subscribe(statistics => {
-      this.statistics = statistics;
-      if (this.selectedOption == "clusters") {
-        this.labels = [];
-        this.data = [];
-        for (let version of statistics.ovirt_versions) {
-          this.labels.push("oVirt " + version['_id']);
-          this.data.push(version['percentage']);
+        if(this.selectedOption == 'clusters'){
+          let keys = this.labels = Object.keys(statistics.ovirt_versions);
+          this.labels = this.labels.map(label => "oVirt " + label);
+          for(let key of keys){
+            this.data.push(statistics.ovirt_versions[key]);
+          }
+          this.ready = true;
         }
-      }
-    });
+
+        else if(this.selectedOption == 'storage'){
+          let keys = this.labels = Object.keys(statistics.storage_types);
+          for(let key of keys){
+            this.data.push(statistics.storage_types[key]);
+          }
+          this.ready = true;
+        }
+
+        else if(this.selectedOption == 'hosts'){
+           let keys = this.labels = Object.keys(statistics.cpus);
+          for(let key of keys){
+            this.data.push(statistics.cpus[key]);
+          }
+          this.ready = true;
+        }
+      });
+    
   }
 
   ngOnInit() {
