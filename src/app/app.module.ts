@@ -15,6 +15,8 @@ import { GeneralStatisticsComponent, GeneralStatisticsResolver } from './general
 
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

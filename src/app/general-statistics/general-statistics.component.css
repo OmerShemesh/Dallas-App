@@ -1,13 +1,12 @@
 .stats-card{
     margin-top: 10px;
-    
-    
+    margin-right: 10px;
+    width: 400px;
+    height: 350px;
+    float:left;
+       
 }
 
-.card-chart{
-    width:300px;
-    height: 300px;
-}
 
 p{
     font-weight: bold;

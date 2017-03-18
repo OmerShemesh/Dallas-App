@@ -3,75 +3,115 @@
 </md-select>
 
 
-<md-card *ngIf="selectedOption == 'setups'" class="stats-card">
-    <md-card-content>
+<div *ngIf="selectedOption == 'setups'">
+    <md-card class="stats-card">
+        <md-card-content>
+            <md-list>
+                <h3 md-subheader>Facts</h3>
+                <md-list-item>
+                    <p>Data about {{statistics.setups_count}} oVirt Setups is currently stored in the system.</p>
+                </md-list-item>
+                <md-list-item>
+                    <p>On average, each oVirt Setup contains {{statistics.average_dcs_count}} Data Centers.</p>
+                </md-list-item>
+            </md-list>
+        </md-card-content>
+    </md-card>
+
+
+</div>
+
+
+<div *ngIf="selectedOption == 'datacenters' ">
+
+    <md-card class="stats-card">
         <md-list>
             <h3 md-subheader>Facts</h3>
             <md-list-item>
-                <p>Data about {{statistics.setups_count}} oVirt Setups is currently stored in the system.</p>
+                <p>Data about {{statistics.datacenters_count}} Data Centers is currently stored in the system.</p>
             </md-list-item>
             <md-list-item>
-                <p>On average, each oVirt Setup contains {{statistics.average_dcs_count}} Data Centers.</p>
+                <p>On average, each Data Center contains {{statistics.average_clusters_count}} Clusters</p>
             </md-list-item>
         </md-list>
-    </md-card-content>
-</md-card>
-
-<md-card *ngIf="selectedOption == 'datacenters'" class="stats-card">
-    <md-list>
-        <h3 md-subheader>Facts</h3>
-        <md-list-item>
-            <p>Data about {{statistics.datacenters_count}} Data Centers is currently stored in the system.</p>
-        </md-list-item>
-        <md-list-item>
-            <p>On average, each Data Center contains {{statistics.average_clusters_count}} Clusters</p>
-        </md-list-item>
-    </md-list>
-</md-card>
-
-<md-card *ngIf="selectedOption == 'clusters'" class="stats-card">
-
-    <md-card-content>
+    </md-card>
+</div>
 
 
-        <md-list>
-            <h3 md-subheader>Facts</h3>
-            <md-list-item>
-                <p>Data about {{statistics.clusters_count}} Clusters is currently stored in the system.</p>
-            </md-list-item>
-            <md-list-item>
-                <p>On average, each Cluster contains {{statistics.average_hosts_count}} Hosts</p>
-            </md-list-item>
-            <md-list-item>
-                <p>On average, each Cluster contains {{statistics.average_vms_count}} Virtual Machines</p>
-            </md-list-item>
-        </md-list>
-    </md-card-content>
-</md-card>
+<div *ngIf="selectedOption == 'clusters' ">
+    <md-card class="stats-card">
 
-<md-card *ngIf="selectedOption == 'hosts'" class="stats-card">
-    <md-card-content>
+        <md-card-content>
 
-
-        <md-list>
-            <h3 md-subheader>Facts</h3>
-            <md-list-item>
-                <p>Data about {{statistics.hosts_count}} Hosts is currently stored in the system.</p>
-            </md-list-item>
-            <md-list-item>
-                <p>On average, on each Host {{statistics.average_running_vms}} Virtual Machines are running.</p>
-            </md-list-item>
-            <h3 md-subheader>Charts</h3>
-        </md-list>
-        <canvas baseChart width=326 height=240 style='width:326px;height:240px' [labels]="['Intel Hosts','AMD Hosts','IBM Hosts']"
-            [data]="[statistics.intel_hosts, statistics.amd_hosts, statistics.ibm_hosts]" [chartType]="'pie'">
-        </canvas>
+            <md-list>
+                <h3  md-subheader>Facts</h3>
+                <md-list-item>
+                    <p>Data about {{statistics.clusters_count}} Clusters is currently stored in the system.</p>
+                </md-list-item>
+                <md-list-item>
+                    <p>On average, each Cluster contains {{statistics.average_hosts_count}} Hosts</p>
+                </md-list-item>
+                <md-list-item>
+                    <p>On average, each Cluster contains {{statistics.average_vms_count}} Virtual Machines</p>
+                </md-list-item>
+            </md-list>
 
 
+        </md-card-content>
+    </md-card>
 
-    </md-card-content>
+    <md-card class="stats-card">
+        <md-card-content>
+
+            <md-list>
+                <h3 align="center" md-subheader>Clusters oVirt Compatibility Distribution</h3>
+
+            </md-list>
+            <canvas baseChart width=326 height=240 style='width:326px;height:240px' [labels]="labels" [data]="data" [chartType]="'pie'"
+                [options]="chartOptions">
+            </canvas>
+
+        </md-card-content>
+
+    </md-card>
+
+
+</div>
+
+<div *ngIf="selectedOption == 'hosts' " >
+    <md-card class="stats-card">
+        <md-card-content>
+
+
+            <md-list>
+                <h3 md-subheader>Facts</h3>
+                <md-list-item>
+                    <p>Data about {{statistics.hosts_count}} Hosts is currently stored in the system.</p>
+                </md-list-item>
+                <md-list-item>
+                    <p>On average, on each Host {{statistics.average_running_vms}} Virtual Machines are running.</p>
+                </md-list-item>
+            </md-list>
+          
 
 
 
+        </md-card-content>
 
-</md-card>
+    </md-card>
+
+     <md-card class="stats-card">
+        <md-card-content>
+
+            <md-list>
+                <h3 align="center"  md-subheader> Hosts CPU Manufacturer Distribution</h3>
+            </md-list>
+            <canvas baseChart width=326 height=240 style='width:326px;height:240px' [labels]="['Intel','AMD','IBM']"
+                [data]="[statistics.intel_hosts, statistics.amd_hosts, statistics.ibm_hosts]" [chartType]="'pie'" [options]="chartOptions">
+            </canvas>
+
+        </md-card-content>
+
+    </md-card>
+
+</div>
