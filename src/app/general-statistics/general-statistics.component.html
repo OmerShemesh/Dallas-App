@@ -1,4 +1,4 @@
-<md-select style="width: 150px;" placeholder="Statistics For" [(ngModel)]="selectedOption" (change)="onOptionChange()">
+<md-select  style="width: 150px;" placeholder="Statistics For" [(ngModel)]="selectedOption" (change)="onOptionChange()">
     <md-option *ngFor="let option of options" [value]="option.value">{{option.viewValue}}</md-option>
 </md-select>
 
@@ -48,7 +48,7 @@
         <md-card-content>
 
             <md-list>
-                <h3 md-subheader>Facts</h3>
+                <h2 md-subheader>Facts</h2>
                 <md-list-item>
                     <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
                     <p>Data about {{statistics.clusters_count}} Clusters is currently stored in the system.</p>
@@ -71,7 +71,7 @@
         <md-card-content>
 
             <md-list>
-                <h3 align="center" md-subheader>Clusters oVirt Compatibility Distribution</h3>
+                <h2 align="center" md-subheader>Clusters oVirt Compatibility Distribution</h2>
 
             </md-list>
             <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' 
@@ -92,7 +92,7 @@
     <md-card class="stats-card">
         <md-card-content>
             <md-list>
-                <h3 md-subheader>Facts</h3>
+                <h2 md-subheader>Facts</h2>
                 <md-list-item>
                     <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
                     <p>Data about {{statistics.hosts_count}} Hosts is currently stored in the system.</p>
@@ -110,7 +110,7 @@
         <md-card-content>
 
             <md-list>
-                <h3 align="center" md-subheader> Hosts CPU Manufacturer Distribution</h3>
+                <h2 align="center" md-subheader> Hosts CPU Manufacturer Distribution</h2>
             </md-list>
             <canvas *ngIf="ready"  baseChart width=326 height=240 style='width:326px;height:240px' 
             [labels]="labels" 

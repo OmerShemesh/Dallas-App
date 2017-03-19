@@ -9,7 +9,6 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
 
-  private hostsStatsitics = {}
   constructor(){}
   
   ngOnInit() {

@@ -7,3 +7,15 @@
     margin: 50px;
 }
 
+.sidenav{
+  padding-top: 8px;
+  width: 300px;
+}
+.container{
+  background-color: #e0e0e0;
+}
+
+.active{
+  color: #D84315;
+  background-color: #E0E0E0;
+}

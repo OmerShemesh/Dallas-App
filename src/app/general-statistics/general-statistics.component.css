@@ -1,10 +1,9 @@
 .stats-card{
-    margin-top: 10px;
-    margin-right: 10px;
     width: 400px;
     height: 350px;
     float:left;
-       
+    margin: 16px 16px 16px 0;
+
 }
 
 

@@ -55,7 +55,7 @@ export class GeneralStatisticsComponent implements OnInit {
           for(let key of keys){
             this.data.push(statistics.ovirt_versions[key]);
           }
-          this.ready = true;
+          
         }
 
         else if(this.selectedOption == 'storage'){
@@ -63,17 +63,20 @@ export class GeneralStatisticsComponent implements OnInit {
           for(let key of keys){
             this.data.push(statistics.storage_types[key]);
           }
-          this.ready = true;
+          
         }
 
         else if(this.selectedOption == 'hosts'){
            let keys = this.labels = Object.keys(statistics.cpus);
           for(let key of keys){
             this.data.push(statistics.cpus[key]);
-          }
-          this.ready = true;
+          }      
         }
+
+        this.ready = true;
       });
+
+
     
   }
 
