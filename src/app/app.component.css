@@ -1,5 +1,11 @@
-.example-icon {
-  padding: 0 14px;
+.toolbar-icon {
+  padding:  5px;
+  margin-bottom: 20px;
+  
+}
+
+.toolbar-content{
+  margin-left: 10px;
 }
 
 
@@ -19,3 +25,4 @@
   color: #D84315;
   background-color: #E0E0E0;
 }
+

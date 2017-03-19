@@ -12,15 +12,19 @@ import { AppComponent } from './app.component';
 
 import { StatisticsService } from './statistics.service';
 import { GeneralStatisticsComponent, GeneralStatisticsResolver } from './general-statistics';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    GeneralStatisticsComponent
+    GeneralStatisticsComponent,
+    NotFoundComponent
+   
   ],
   imports: [
     BrowserModule,
