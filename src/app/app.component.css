@@ -1,9 +1,9 @@
 .toolbar-icon {
   padding:  5px;
   margin-bottom: 20px;
+  font-size:36px;
   
 }
-
 .toolbar-content{
   margin-left: 10px;
 }
@@ -22,7 +22,7 @@
 }
 
 .active{
-  color: #D84315;
+  color: #1976d2;
   background-color: #E0E0E0;
 }
 

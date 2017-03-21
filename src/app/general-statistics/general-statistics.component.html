@@ -1,187 +1,193 @@
-<md-select  style="width: 150px;" placeholder="Statistics For" [(ngModel)]="selectedOption" (change)="onOptionChange()">
-    <md-option *ngFor="let option of options" [value]="option.value">{{option.viewValue}}</md-option>
-</md-select>
+
+<md-tab-group #tabGroup (selectChange)="onSelect(tabGroup.selectedIndex)">
+    <md-tab *ngFor="let option of options" [label]="option.viewValue">
+        <div *ngIf="selectedOption == 'setups'">
+            <md-card class="stats-card">
+                <md-card-content>
+                    <md-list>
+                        <h3 md-subheader>Facts</h3>
+                        <md-list-item>
+                            <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+                            <p>Data about {{statistics.setups_count}} oVirt Setups is currently stored in the system.</p>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+                            <p>On average, each oVirt Setup contains {{statistics.average_dcs_count}} Data Centers.</p>
+                        </md-list-item>
+                    </md-list>
+                </md-card-content>
+            </md-card>
 
 
-<div *ngIf="selectedOption == 'setups'">
-    <md-card class="stats-card">
-        <md-card-content>
-            <md-list>
-                <h3 md-subheader>Facts</h3>
-                <md-list-item>
-                    <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-                    <p>Data about {{statistics.setups_count}} oVirt Setups is currently stored in the system.</p>
-                </md-list-item>
-                <md-list-item>
-                    <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-                    <p>On average, each oVirt Setup contains {{statistics.average_dcs_count}} Data Centers.</p>
-                </md-list-item>
-            </md-list>
-        </md-card-content>
-    </md-card>
+        </div>
 
 
-</div>
+        <div *ngIf="selectedOption == 'datacenters'">
+
+            <md-card class="stats-card">
+                <md-list>
+                    <h3 md-subheader>Facts</h3>
+                    <md-list-item>
+                        <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+                        <p>Data about {{statistics.datacenters_count}} Data Centers is currently stored in the system.</p>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+                        <p>On average, each Data Center contains {{statistics.average_clusters_count}} Clusters.</p>
+                    </md-list-item>
+                </md-list>
+            </md-card>
+        </div>
 
 
-<div *ngIf="selectedOption == 'datacenters'">
+        <div *ngIf="selectedOption == 'clusters'">
+            <md-card class="stats-card">
 
-    <md-card class="stats-card">
-        <md-list>
-            <h3 md-subheader>Facts</h3>
-            <md-list-item>
-                <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-                <p>Data about {{statistics.datacenters_count}} Data Centers is currently stored in the system.</p>
-            </md-list-item>
-            <md-list-item>
-                <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-                <p>On average, each Data Center contains {{statistics.average_clusters_count}} Clusters.</p>
-            </md-list-item>
-        </md-list>
-    </md-card>
-</div>
+                <md-card-content>
 
-
-<div *ngIf="selectedOption == 'clusters'">
-    <md-card class="stats-card">
-
-        <md-card-content>
-
-            <md-list>
-                <h2 md-subheader>Facts</h2>
-                <md-list-item>
-                    <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-                    <p>Data about {{statistics.clusters_count}} Clusters is currently stored in the system.</p>
-                </md-list-item>
-                <md-list-item>
-                    <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-                    <p>On average, each Cluster contains {{statistics.average_hosts_count}} Hosts.</p>
-                </md-list-item>
-                <md-list-item>
-                    <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-                    <p>On average, each Cluster contains {{statistics.average_vms_count}} Virtual Machines.</p>
-                </md-list-item>
-            </md-list>
+                    <md-list>
+                        <h2 md-subheader>Facts</h2>
+                        <md-list-item>
+                            <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+                            <p>Data about {{statistics.clusters_count}} Clusters is currently stored in the system.</p>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+                            <p>On average, each Cluster contains {{statistics.average_hosts_count}} Hosts.</p>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+                            <p>On average, each Cluster contains {{statistics.average_vms_count}} Virtual Machines.</p>
+                        </md-list-item>
+                    </md-list>
 
 
-        </md-card-content>
-    </md-card>
+                </md-card-content>
+            </md-card>
 
-    <md-card class="stats-card">
-        <md-card-content>
+            <md-card class="stats-card">
+                <md-card-content>
 
-            <md-list>
-                <h2 align="center" md-subheader>Clusters oVirt Compatibility Distribution</h2>
+                    <md-list>
+                        <h2 align="center" md-subheader>Clusters oVirt Compatibility Distribution</h2>
 
-            </md-list>
-            <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' 
-            [labels]="labels"
-            [data]="data" 
-            [chartType]="'pie'"
-            [options]="chartOptions">
-            </canvas>
+                    </md-list>
+                    <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [labels]="labels" [data]="data" [chartType]="'pie'"
+                        [options]="chartOptions">
+                    </canvas>
 
-        </md-card-content>
+                </md-card-content>
 
-    </md-card>
+            </md-card>
 
 
-</div>
+        </div>
 
-<div *ngIf="selectedOption == 'hosts'">
-    <md-card class="stats-card">
-        <md-card-content>
-            <md-list>
-                <h2 md-subheader>Facts</h2>
-                <md-list-item>
-                    <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-                    <p>Data about {{statistics.hosts_count}} Hosts is currently stored in the system.</p>
-                </md-list-item>
-                <md-list-item>
-                    <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-                    <p>On average, on each Host {{statistics.average_running_vms}} Virtual Machines are running.</p>
-                </md-list-item>
-            </md-list>
-        </md-card-content>
+        <div *ngIf="selectedOption == 'hosts'">
+            <md-card class="stats-card">
+                <md-card-content>
+                    <md-list>
+                        <h2 md-subheader>Facts</h2>
+                        <md-list-item>
+                            <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+                            <p>Data about {{statistics.hosts_count}} Hosts is currently stored in the system.</p>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+                            <p>On average, on each Host {{statistics.average_running_vms}} Virtual Machines are running.</p>
+                        </md-list-item>
+                    </md-list>
+                </md-card-content>
 
-    </md-card>
+            </md-card>
 
-    <md-card class="stats-card">
-        <md-card-content>
+            <md-card class="stats-card">
+                <md-card-content>
 
-            <md-list>
-                <h2 align="center" md-subheader> Hosts CPU Manufacturer Distribution</h2>
-            </md-list>
-            <canvas *ngIf="ready"  baseChart width=326 height=240 style='width:326px;height:240px' 
-            [labels]="labels" 
-            [data]="data"
-            [chartType]="'pie'" 
-            [options]="chartOptions">
-            </canvas>
+                    <md-list>
+                        <h2 align="center" md-subheader> Hosts CPU Manufacturer Distribution</h2>
+                    </md-list>
+                    <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [labels]="labels" [data]="data" [chartType]="'pie'"
+                        [options]="chartOptions">
+                    </canvas>
 
-        </md-card-content>
+                </md-card-content>
 
-    </md-card>
+            </md-card>
 
-</div>
+        </div>
 
 
-<div *ngIf="selectedOption == 'vms'">
+        <div *ngIf="selectedOption == 'vms'">
 
-    <md-card class="stats-card">
-        <md-card-content>
-            <md-list>
-                <h3 md-subheader>Facts</h3>
-                <md-list-item>
-                    <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-                    <p>Data about {{statistics.vms_count}} Virtual Machines is currently stored in the system.</p>
-                </md-list-item>
-                <md-list-item>
-                    <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-                    <p>The average memory size is {{statistics.average_mem_size}}MB.</p>
-                </md-list-item>
-            </md-list>
-        </md-card-content>
+            <md-card class="stats-card">
+                <md-card-content>
+                    <md-list>
+                        <h3 md-subheader>Facts</h3>
+                        <md-list-item>
+                            <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+                            <p>Data about {{statistics.vms_count}} Virtual Machines is currently stored in the system.</p>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+                            <p>The average memory size is {{statistics.average_mem_size}}MB.</p>
+                        </md-list-item>
+                    </md-list>
+                </md-card-content>
 
-    </md-card>
-</div>
+            </md-card>
+
+            <md-card class="stats-card">
+                <md-card-content>
+
+                    <md-list>
+                        <h2 align="center" md-subheader>Virtual Machines OS Distribution</h2>
+
+                    </md-list>
+                    <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [labels]="labels" [data]="data" [chartType]="'doughnut'"
+                        [options]="chartOptions">
+                    </canvas>
+
+                </md-card-content>
+
+            </md-card>
+        </div>
 
 
 
-<div *ngIf="selectedOption == 'storage'">
-    <md-card class="stats-card">
+        <div *ngIf="selectedOption == 'storage'">
+            <md-card class="stats-card">
 
-        <md-card-content>
+                <md-card-content>
 
-            <md-list>
-                <h3 md-subheader>Facts</h3>
-                <md-list-item>
-                    <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-                    <p>Data about {{statistics.storage_count}} Storage Domains is currently stored in the system.</p>
-                </md-list-item>
-            </md-list>
-
-
-        </md-card-content>
-    </md-card>
-
-    <md-card class="stats-card">
-        <md-card-content>
-
-            <md-list>
-                <h3 align="center" md-subheader>Storage Types Distribution</h3>
-
-            </md-list>
-            <canvas *ngIf="ready"  baseChart width=326 height=240 style='width:326px;height:240px' 
-            [data]="data" 
-            [labels]="labels"
-            [chartType]="'pie'"
-            [options]="chartOptions">
-            </canvas>
-
-        </md-card-content>
-
-    </md-card>
+                    <md-list>
+                        <h3 md-subheader>Facts</h3>
+                        <md-list-item>
+                            <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+                            <p>Data about {{statistics.storage_count}} Storage Domains is currently stored in the system.</p>
+                        </md-list-item>
+                    </md-list>
 
 
-</div>
+                </md-card-content>
+            </md-card>
+
+            <md-card class="stats-card">
+                <md-card-content>
+
+                    <md-list>
+                        <h3 align="center" md-subheader>Storage Types Distribution</h3>
+
+                    </md-list>
+                    <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [data]="data" [labels]="labels" [chartType]="'pie'"
+                        [options]="chartOptions">
+                    </canvas>
+
+                </md-card-content>
+
+            </md-card>
+
+
+        </div>
+    </md-tab>
+</md-tab-group>
