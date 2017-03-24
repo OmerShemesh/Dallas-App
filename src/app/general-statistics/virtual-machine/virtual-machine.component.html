@@ -1,0 +1,31 @@
+<md-card class="stats-card">
+  <md-card-content>
+    <md-list>
+      <h3 md-subheader>Facts</h3>
+      <md-list-item>
+        <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+        <p>Data about {{statistics.vms_count}} Virtual Machines is currently stored in the system.</p>
+      </md-list-item>
+      <md-list-item>
+        <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+        <p>The average memory size is {{statistics.average_mem_size}}MB.</p>
+      </md-list-item>
+    </md-list>
+  </md-card-content>
+
+</md-card>
+
+<md-card class="stats-card">
+  <md-card-content>
+
+    <md-list>
+      <h2 align="center" md-subheader>Virtual Machines OS Distribution</h2>
+
+    </md-list>
+    <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [labels]="labels" [data]="data" [chartType]="'doughnut'"
+      [options]="chartOptions">
+    </canvas>
+
+  </md-card-content>
+
+</md-card>

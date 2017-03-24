@@ -1,4 +1,4 @@
-.stats-card{
+/deep/ .stats-card{
     width: 400px;
     /*height: 350px;*/
     float:left;
@@ -6,12 +6,21 @@
 
 }
 
+md-sidenav{
+    width: 320px;
+}
+
+
 
 .icon-10{
     font-size: 14px;
     margin-right: -8px;
     margin-top: 5px;
 }
-p{
+/deep/ p{
     font-weight: bold;
+}
+
+.content{
+    background-color: #e0e0e0;
 }

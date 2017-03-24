@@ -1,0 +1,38 @@
+<md-card class="stats-card">
+
+  <md-card-content>
+
+    <md-list>
+      <h2 md-subheader>Facts</h2>
+      <md-list-item>
+        <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+        <p>Data about {{statistics.clusters_count}} Clusters is currently stored in the system.</p>
+      </md-list-item>
+      <md-list-item>
+        <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+        <p>On average, each Cluster contains {{statistics.average_hosts_count}} Hosts.</p>
+      </md-list-item>
+      <md-list-item>
+        <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+        <p>On average, each Cluster contains {{statistics.average_vms_count}} Virtual Machines.</p>
+      </md-list-item>
+    </md-list>
+
+
+  </md-card-content>
+</md-card>
+
+<md-card class="stats-card">
+  <md-card-content>
+
+    <md-list>
+      <h2 align="center" md-subheader>Clusters oVirt Compatibility Distribution</h2>
+
+    </md-list>
+    <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [labels]="labels" [data]="data" [chartType]="'pie'"
+      [options]="chartOptions">
+    </canvas>
+
+  </md-card-content>
+
+</md-card>

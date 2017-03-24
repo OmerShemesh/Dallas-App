@@ -9,20 +9,19 @@
 }
 
 
-.inline-box{
-    margin: 50px;
-}
 
 .sidenav{
-  padding-top: 8px;
+  /*padding-top: 8px;*/
   width: 300px;
 }
 .container{
   background-color: #e0e0e0;
 }
 
+
 .active{
   color: #1976d2;
   background-color: #E0E0E0;
 }
+
 
