@@ -1,8 +1,7 @@
 /deep/ .stats-card{
     width: 400px;
-    /*height: 350px;*/
+    margin: 10px 10px 10px 10px;
     float:left;
-    margin: 10px 10px 10px 0;
 
 }
 
@@ -12,15 +11,22 @@ md-sidenav{
 
 
 
-.icon-10{
+/deep/.icon-10{
     font-size: 14px;
     margin-right: -8px;
     margin-top: 5px;
 }
 /deep/ p{
-    font-weight: bold;
+    font-weight: 500;
 }
 
-.content{
-    background-color: #e0e0e0;
+
+.active{
+    background-color:#1976d2 ;        
+}
+
+
+.navList{
+    width:200px;
+    /*background-color: #BDBDBD;*/
 }
