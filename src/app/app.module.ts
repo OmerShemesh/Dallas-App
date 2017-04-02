@@ -17,6 +17,7 @@ import { StatisticsService } from './statistics.service';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+
 import {
   GeneralStatisticsComponent, 
   SetupComponent,

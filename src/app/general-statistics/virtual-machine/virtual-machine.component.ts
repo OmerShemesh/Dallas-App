@@ -37,14 +37,13 @@ export class VirtualMachineComponent implements OnInit {
     this.statisticsService.getGeneralStatistics('vms').subscribe(statistics => {
 
       this.statistics = statistics;
-
-
+      
       this.chartOptions.legend.display = false;
       let keys = this.labels = Object.keys(statistics.os_types);
       for (let key of keys) {
         this.data.push(statistics.os_types[key]);
       }
-
+      
 
 
 

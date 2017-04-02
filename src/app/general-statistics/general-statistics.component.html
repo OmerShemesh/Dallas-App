@@ -8,28 +8,18 @@
             </md-nav-list>
         <!--</md-sidenav>
 
-    </md-sidenav-container>-->
+    </md-si*ngIf="selectedOption == 'setups'"denav-container>-->
 
 
-    <div class="content">
-        <div *ngIf="selectedOption == 'setups'">
-            <setup fxLayoutWrap></setup>
-        </div>
-        <div *ngIf="selectedOption == 'datacenters'">
-            <data-center fxLayoutWrap></data-center>
-        </div>
-        <div *ngIf="selectedOption == 'clusters'">
-            <cluster fxLayoutWrap></cluster>
-        </div>
-        <div *ngIf="selectedOption == 'hosts'">
-            <host fxLayout="row" fxLayoutWrap colCount="3"></host>
-        </div>
-        <div *ngIf="selectedOption == 'vms'">
-            <virtual-machine fxLayoutWrap></virtual-machine>
-        </div>
-        <div *ngIf="selectedOption == 'storage'">
-            <storage fxLayoutWrap></storage>
-        </div>
+    <div >
+        <setup fxLayoutWrap *ngIf="selectedOption == 'setups'"></setup>
+        <data-center fxLayoutWrap *ngIf="selectedOption == 'datacenters'"></data-center>
+        <cluster fxLayoutWrap *ngIf="selectedOption == 'clusters'"></cluster>
+        <host fxLayoutWrap *ngIf="selectedOption == 'hosts'"></host>
+        <virtual-machine fxLayoutWrap *ngIf="selectedOption == 'vms'"></virtual-machine>
+        <storage fxLayoutWrap *ngIf="selectedOption == 'storage'"></storage>
+
+
     </div>
 
 </div>
@@ -42,10 +32,3 @@
 
 
 
-<!--
-<md-tab-group #tabGroup (selectChange)="onSelect(tabGroup.selectedIndex)">
-    <md-tab *ngFor="let option of options" [label]="option.viewValue">
-       
-    </md-tab>
-</md-tab-group>
--->
