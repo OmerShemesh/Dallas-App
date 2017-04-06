@@ -2,7 +2,7 @@
     <!--<md-sidenav-container class="content">
         <md-sidenav mode="side"  opened="true">-->
             <md-nav-list fxLayout="column" class="navList">
-                <md-list-item  *ngFor="let option of options" [ngClass]="{'active':selectedOption==option.value}" (click)="onSelect(option.value)">
+                <md-list-item *ngFor="let option of options" [ngClass]="{'active':selectedOption==option.value}" (click)="onSelect(option.value)">
                     {{option.viewValue}}
                 </md-list-item>
             </md-nav-list>
@@ -11,7 +11,7 @@
     </md-si*ngIf="selectedOption == 'setups'"denav-container>-->
 
 
-    <div >
+    <div style="margin-top:10px">
         <setup fxLayoutWrap *ngIf="selectedOption == 'setups'"></setup>
         <data-center fxLayoutWrap *ngIf="selectedOption == 'datacenters'"></data-center>
         <cluster fxLayoutWrap *ngIf="selectedOption == 'clusters'"></cluster>

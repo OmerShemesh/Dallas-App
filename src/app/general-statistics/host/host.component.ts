@@ -9,11 +9,18 @@ import { StatisticsService } from "../../statistics.service";
 export class HostComponent implements OnInit {
 
   ready: boolean;
-  cpuLabels = [];
-  cpuData = [];
-  coresLables = [];
-  coresData = [];
+
   statistics = [];
+
+  data = {
+    cpuData: [],
+    coresData: []
+  }
+
+  labels = {
+    cpuLabels: [],
+    coresLables: []
+  }
 
   chartOptions = {
     legend: {
@@ -35,27 +42,27 @@ export class HostComponent implements OnInit {
 
   ngOnInit() {
     this.ready = false;
-    this.cpuData = [];
-    this.cpuLabels = [];
-    this.coresData = [];
-    this.coresLables = [];
+    this.data.cpuData = [];
+    this.labels.cpuLabels = [];
+    this.data.coresData = [];
+    this.labels.coresLables = [];
 
 
     this.statisticsService.getGeneralStatistics('hosts').subscribe(statistics => {
 
       this.statistics = statistics;
       this.chartOptions.legend.display = true;
-      let keys = this.cpuLabels = Object.keys(statistics.cpus);
+      let keys = this.labels.cpuLabels = Object.keys(statistics.cpus);
       for (let key of keys) {
-        this.cpuData.push(statistics.cpus[key]);
+        this.data.cpuData.push(statistics.cpus[key]);
       }
 
-      keys = this.coresLables = Object.keys(statistics.cpu_cores);
+      keys = this.labels.coresLables = Object.keys(statistics.cpu_cores);
       for (let key of keys) {
-        this.coresData.push(statistics.cpu_cores[key]);
+        this.data.coresData.push(statistics.cpu_cores[key]);
       }
 
-      this.coresLables = this.coresLables.map(label => label + " Cores");
+      this.labels.coresLables = this.labels.coresLables.map(label => label + " Cores");
 
       this.ready = true;
     });

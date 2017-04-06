@@ -8,9 +8,11 @@ import { StatisticsService } from "../../statistics.service";
 })
 export class DataCenterComponent implements OnInit {
 
-  labels = [];
+  labels = {
+  };
   ready: boolean;
-  data = [];
+  data = {
+  };
   statistics = [];
 
   chartOptions = {

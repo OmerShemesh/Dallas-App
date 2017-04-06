@@ -8,10 +8,16 @@ import { StatisticsService } from "../../statistics.service";
 })
 export class ClusterComponent implements OnInit {
 
-  labels = [];
   ready: boolean;
-  data = [];
   statistics = [];
+
+  data = {
+    ovirtCompatibilityData:[]
+  };
+
+  labels = {
+    ovirtCompatibilityLabels:[]
+  };
 
   chartOptions = {
     legend: {
@@ -33,18 +39,18 @@ export class ClusterComponent implements OnInit {
 
   ngOnInit() {
     this.ready = false;
-    this.data = [];
-    this.labels = [];
+    this.data.ovirtCompatibilityData = [];
+    this.labels.ovirtCompatibilityLabels = [];
     this.statisticsService.getGeneralStatistics('clusters').subscribe(statistics => {
 
       this.statistics = statistics;
 
 
       this.chartOptions.legend.display = true;
-      let keys = this.labels = Object.keys(statistics.ovirt_versions);
-      this.labels = this.labels.map(label => "oVirt " + label);
+      let keys = this.labels.ovirtCompatibilityLabels = Object.keys(statistics.ovirt_versions);
+      this.labels.ovirtCompatibilityLabels = this.labels.ovirtCompatibilityLabels.map(label => "oVirt " + label);
       for (let key of keys) {
-        this.data.push(statistics.ovirt_versions[key]);
+        this.data.ovirtCompatibilityData.push(statistics.ovirt_versions[key]);
       }
 
       this.ready = true;

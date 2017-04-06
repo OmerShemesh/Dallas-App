@@ -8,9 +8,13 @@ import { StatisticsService } from '../../statistics.service';
 })
 export class SetupComponent implements OnInit {
 
-  labels = [];
+  labels = {
+
+  };
   ready: boolean;
-  data = [];
+  data = {
+    
+  };
   statistics = [];
   chartOptions = {
     legend: {

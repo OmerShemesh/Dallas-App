@@ -21,10 +21,11 @@
       <h3 align="center" md-subheader>Storage Types Distribution</h3>
 
     </md-list>
-    <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [data]="data" [labels]="labels" [chartType]="'pie'"
+    <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [data]="data.storageTypesData" [labels]="labels.storageTypesLabels" [chartType]="'pie'"
       [options]="chartOptions">
     </canvas>
 
   </md-card-content>
 
 </md-card>
+

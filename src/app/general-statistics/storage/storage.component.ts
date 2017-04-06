@@ -8,9 +8,13 @@ import { StatisticsService } from "../../statistics.service";
 })
 export class StorageComponent implements OnInit {
 
-  labels = [];
+  labels = {
+    storageTypesLabels:[]
+  };
   ready: boolean;
-  data = [];
+  data = {
+    storageTypesData:[]
+  };
   statistics = [];
 
   chartOptions = {
@@ -32,17 +36,17 @@ export class StorageComponent implements OnInit {
 
   ngOnInit() {
     this.ready = false;
-    this.data = [];
-    this.labels = [];
+    this.data.storageTypesData = [];
+    this.labels.storageTypesLabels = [];
     this.statisticsService.getGeneralStatistics('storage').subscribe(statistics => {
 
       this.statistics = statistics;
 
 
       this.chartOptions.legend.display = true;
-      let keys = this.labels = Object.keys(statistics.storage_types);
+      let keys = this.labels.storageTypesLabels = Object.keys(statistics.storage_types);
       for (let key of keys) {
-        this.data.push(statistics.storage_types[key]);
+        this.data.storageTypesData.push(statistics.storage_types[key]);
       }
 
 

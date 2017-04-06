@@ -8,9 +8,16 @@ import { StatisticsService } from "../../statistics.service";
 })
 export class VirtualMachineComponent implements OnInit {
 
-  labels = [];
+  
+  labels = {
+    osTypesLabels: [],
+    displayTypesLabels: []
+  };
   ready: boolean;
-  data = [];
+  data = {
+    osTypesData: [],
+    displayTypesData:[]
+  };
   statistics = [];
 
   chartOptions = {
@@ -31,19 +38,25 @@ export class VirtualMachineComponent implements OnInit {
   constructor(private statisticsService: StatisticsService) { }
 
   ngOnInit() {
+    
     this.ready = false;
-    this.data = [];
-    this.labels = [];
+    this.data.osTypesData = [];
+    this.labels.osTypesLabels = [];
     this.statisticsService.getGeneralStatistics('vms').subscribe(statistics => {
 
       this.statistics = statistics;
-      
+
       this.chartOptions.legend.display = false;
-      let keys = this.labels = Object.keys(statistics.os_types);
+      let keys = this.labels.osTypesLabels = Object.keys(statistics.os_types);
       for (let key of keys) {
-        this.data.push(statistics.os_types[key]);
+        this.data.osTypesData.push(statistics.os_types[key]);
       }
-      
+
+
+      keys = this.labels.displayTypesLabels = Object.keys(statistics.display_types);
+      for (let key of keys) {
+        this.data.displayTypesData.push(statistics.display_types[key]);
+      }
 
 
 
