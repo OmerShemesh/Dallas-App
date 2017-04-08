@@ -1,23 +1,30 @@
-<div fxLayout="row">
+<div fxLayout="row" fxFill>
     <!--<md-sidenav-container class="content">
         <md-sidenav mode="side"  opened="true">-->
-            <md-nav-list fxLayout="column" class="navList">
-                <md-list-item *ngFor="let option of options" [ngClass]="{'active':selectedOption==option.value}" (click)="onSelect(option.value)">
+            <md-nav-list fxLayout="column" class="navList" fxFlex="20">
+
+                <div *ngFor="let option of options">
+                    <md-list-item  [ngClass]="{'active':selectedOption==option.value}" (click)="onSelect(option.value)">
                     {{option.viewValue}}
-                </md-list-item>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                </div>
+                
+
+                
             </md-nav-list>
         <!--</md-sidenav>
 
     </md-si*ngIf="selectedOption == 'setups'"denav-container>-->
 
 
-    <div style="margin-top:10px">
+    <div >
         <setup fxLayoutWrap *ngIf="selectedOption == 'setups'"></setup>
-        <data-center fxLayoutWrap *ngIf="selectedOption == 'datacenters'"></data-center>
+        <data-center  fxLayoutWrap *ngIf="selectedOption == 'datacenters'"></data-center>
         <cluster fxLayoutWrap *ngIf="selectedOption == 'clusters'"></cluster>
-        <host fxLayoutWrap *ngIf="selectedOption == 'hosts'"></host>
-        <virtual-machine fxLayoutWrap *ngIf="selectedOption == 'vms'"></virtual-machine>
-        <storage fxLayoutWrap *ngIf="selectedOption == 'storage'"></storage>
+        <host  fxLayoutWrap *ngIf="selectedOption == 'hosts'"></host>
+        <virtual-machine  fxLayoutWrap *ngIf="selectedOption == 'vms'"></virtual-machine>
+        <storage  fxLayoutWrap *ngIf="selectedOption == 'storage'"></storage>
 
 
     </div>

@@ -1,4 +1,4 @@
-<md-card class="stats-card">
+<md-card style="align-self: flex-start; "  class="stats-card">
   <md-card-content>
     <md-list>
       <h2 md-subheader>Facts</h2>
@@ -12,7 +12,15 @@
       </md-list-item>
       <md-list-item>
         <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-        <p>On average, on each Host {{statistics.average_running_vms}} Virtual Machines are running.</p>
+        <p>On average, {{statistics.average_cpu_usage}}% of each Host's cpu is being used.</p>
+      </md-list-item>
+      <md-list-item>
+        <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+        <p>On average, {{statistics.average_mem_usage}}% of each Host's memory is being used.</p>
+      </md-list-item>
+      <md-list-item>
+        <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+        <p>On average, {{statistics.average_running_vms}} Virtual Machines are running on each Host .</p>
       </md-list-item>
     </md-list>
   </md-card-content>
