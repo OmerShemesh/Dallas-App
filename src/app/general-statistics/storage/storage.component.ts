@@ -9,13 +9,17 @@ import { StatisticsService } from "../../statistics.service";
 export class StorageComponent implements OnInit {
 
   labels = {
-    storageTypesLabels:[]
+    storageTypesLabels: []
   };
   ready: boolean;
   data = {
-    storageTypesData:[]
+    storageTypesData: []
   };
-  statistics = [];
+  statistics = {
+    average_disk_usage: {},
+    storage_count: {},
+    storage_types: {}
+  };
 
   chartOptions = {
     legend: {

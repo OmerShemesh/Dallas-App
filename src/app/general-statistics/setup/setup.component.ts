@@ -13,9 +13,17 @@ export class SetupComponent implements OnInit {
   };
   ready: boolean;
   data = {
-    
+
   };
-  statistics = [];
+  statistics = {
+    average_clusters_count: {},
+    average_dcs_count: {},
+    average_hosts_count: {},
+    max_clusters_count: {},
+    max_dcs_count: {},
+    max_hosts_count: {},
+    setups_count: {}
+  };
   chartOptions = {
     legend: {
       display: true

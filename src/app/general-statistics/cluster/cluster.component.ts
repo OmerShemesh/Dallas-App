@@ -9,14 +9,19 @@ import { StatisticsService } from "../../statistics.service";
 export class ClusterComponent implements OnInit {
 
   ready: boolean;
-  statistics = [];
+  statistics = {
+    average_hosts_count: {},
+    average_vms_count: {},
+    clusters_count: {},
+    ovirt_versions: {}
+  };
 
   data = {
-    ovirtCompatibilityData:[]
+    ovirtCompatibilityData: []
   };
 
   labels = {
-    ovirtCompatibilityLabels:[]
+    ovirtCompatibilityLabels: []
   };
 
   chartOptions = {

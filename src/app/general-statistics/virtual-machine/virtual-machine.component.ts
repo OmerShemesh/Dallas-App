@@ -8,7 +8,7 @@ import { StatisticsService } from "../../statistics.service";
 })
 export class VirtualMachineComponent implements OnInit {
 
-  
+
   labels = {
     osTypesLabels: [],
     displayTypesLabels: []
@@ -16,9 +16,16 @@ export class VirtualMachineComponent implements OnInit {
   ready: boolean;
   data = {
     osTypesData: [],
-    displayTypesData:[]
+    displayTypesData: []
   };
-  statistics = [];
+  statistics = {
+    average_cpu_usage: {},
+    average_mem_size: {},
+    average_mem_usage: {},
+    display_types: {},
+    os_types: {},
+    vms_count: {}
+  };
 
   chartOptions = {
     legend: {
@@ -38,7 +45,7 @@ export class VirtualMachineComponent implements OnInit {
   constructor(private statisticsService: StatisticsService) { }
 
   ngOnInit() {
-    
+
     this.ready = false;
     this.data.osTypesData = [];
     this.labels.osTypesLabels = [];

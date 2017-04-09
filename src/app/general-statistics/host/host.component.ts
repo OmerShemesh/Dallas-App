@@ -10,7 +10,15 @@ export class HostComponent implements OnInit {
 
   ready: boolean;
 
-  statistics = [];
+  statistics = {
+    average_cpu_usage: {},
+    average_mem_size: {},
+    average_mem_usage: {},
+    average_running_vms: {},
+    cpu_cores: {},
+    cpus: {},
+    hosts_count: {}
+  };
 
   data = {
     cpuData: [],

@@ -13,7 +13,10 @@ export class DataCenterComponent implements OnInit {
   ready: boolean;
   data = {
   };
-  statistics = [];
+  statistics = {
+    average_clusters_count: {},
+    datacenters_count: {}
+  };
 
   chartOptions = {
     legend: {
