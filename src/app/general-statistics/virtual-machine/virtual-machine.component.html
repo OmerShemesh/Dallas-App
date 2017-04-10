@@ -33,7 +33,7 @@
 
     </md-list>
     <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [labels]="labels.osTypesLabels" [data]="data.osTypesData" [chartType]="'doughnut'"
-      [options]="chartOptions">
+      [options]="osTypesChartOptions">
     </canvas>
   </md-card-content>
 
@@ -47,7 +47,7 @@
 
     </md-list>
     <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [labels]="labels.displayTypesLabels" [data]="data.displayTypesData" [chartType]="'doughnut'"
-      [options]="chartOptions">
+      [options]="displayTypesChartOptions">
     </canvas>
   </md-card-content>
 
