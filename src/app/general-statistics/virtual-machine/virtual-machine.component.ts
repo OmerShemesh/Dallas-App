@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StatisticsService } from "../../statistics.service";
+import 'rxjs/add/operator/finally';
 
 @Component({
   selector: 'virtual-machine',

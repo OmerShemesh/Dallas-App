@@ -1,35 +1,30 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {RouterModule} from '@angular/router';
-import {routing} from './general-statistics.routing';
 import { SharedModule } from '../shared.module';
+import { GeneralStatisticsComponent } from './general-statistics.component';
+import { routing } from './general-statistics.routing';
 
- 
-import {
-  GeneralStatisticsComponent,
-  SetupComponent,
-  DataCenterComponent,
-  ClusterComponent,
-  HostComponent,
-  VirtualMachineComponent,
-  StorageComponent
-} from '.';
+import { SetupModule } from './setup/setup.module';
+import { DataCenterModule } from './data-center/data-center.module';
+import { ClusterModule } from './cluster/cluster.module';
+import { HostModule } from './host/host.module';
+import { VirtualMachineModule } from './virtual-machine/virtual-machine.module';
+import { StorageModule } from './storage/storage.module';
+
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     routing,
-    SharedModule
-
+    SetupModule,
+    DataCenterModule,
+    ClusterModule,
+    HostModule,
+    VirtualMachineModule,
+    StorageModule
   ],
   declarations: [
     GeneralStatisticsComponent,
-    SetupComponent,
-    DataCenterComponent,
-    ClusterComponent,
-    HostComponent,
-    VirtualMachineComponent,
-    StorageComponent
   ],
 })
 export class GeneralStatisticsModule { }

@@ -1,58 +1,59 @@
+<div fxLayoutWrap>
+  <md-card class="stats-card">
+    <md-card-content>
+      <md-list>
+        <h3 md-subheader>Facts</h3>
+        <md-list-item>
+          <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+          <p>{{statistics.vms_count}} Virtual Machines are currently stored in the system.</p>
+        </md-list-item>
+        <md-list-item>
+          <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+          <p>The average memory size is {{statistics.average_mem_size}}MB.</p>
+        </md-list-item>
+        <md-list-item>
+          <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+          <p>On average, {{statistics.average_mem_usage}}% of each Virtual Machine's memory is being used.</p>
+        </md-list-item>
+        <md-list-item>
+          <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+          <p>On average, {{statistics.average_cpu_usage}}% of each Virtual Machine's cpu is being used.</p>
+        </md-list-item>
+      </md-list>
+    </md-card-content>
+
+  </md-card>
+
+  <md-card class="stats-card">
+    <md-card-content>
+
+      <md-list>
+        <h3 align="center" md-subheader>OS Distribution</h3>
+
+      </md-list>
+      <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [labels]="labels.osTypesLabels" [data]="data.osTypesData"
+        [chartType]="'doughnut'" [options]="osTypesChartOptions">
+      </canvas>
+    </md-card-content>
+
+  </md-card>
+
+  <md-card class="stats-card">
+    <md-card-content>
+
+      <md-list>
+        <h2 align="center" md-subheader>Display Types Distribution</h2>
+
+      </md-list>
+      <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [labels]="labels.displayTypesLabels"
+        [data]="data.displayTypesData" [chartType]="'doughnut'" [options]="displayTypesChartOptions">
+      </canvas>
+    </md-card-content>
+
+  </md-card>
 
 
-<md-card style="align-self: flex-start; " class="stats-card">
-  <md-card-content>
-    <md-list>
-      <h3 md-subheader>Facts</h3>
-      <md-list-item>
-        <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-        <p>{{statistics.vms_count}} Virtual Machines are currently stored in the system.</p>
-      </md-list-item>
-      <md-list-item>
-        <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-        <p>The average memory size is {{statistics.average_mem_size}}MB.</p>
-      </md-list-item>
-      <md-list-item>
-        <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-        <p>On average, {{statistics.average_mem_usage}}% of each Virtual Machine's memory is being used.</p>
-      </md-list-item>
-      <md-list-item>
-        <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-        <p>On average, {{statistics.average_cpu_usage}}% of each Virtual Machine's cpu is being used.</p>
-      </md-list-item>
-    </md-list>
-  </md-card-content>
-
-</md-card>
-
-<md-card  class="stats-card">
-  <md-card-content>
-
-    <md-list>
-      <h2 align="center" md-subheader>OS Distribution</h2>
-
-    </md-list>
-    <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [labels]="labels.osTypesLabels" [data]="data.osTypesData" [chartType]="'doughnut'"
-      [options]="osTypesChartOptions">
-    </canvas>
-  </md-card-content>
-
-</md-card>
-
-<md-card  class="stats-card">
-  <md-card-content>
-
-    <md-list>
-      <h2 align="center" md-subheader>Display Types Distribution</h2>
-
-    </md-list>
-    <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [labels]="labels.displayTypesLabels" [data]="data.displayTypesData" [chartType]="'doughnut'"
-      [options]="displayTypesChartOptions">
-    </canvas>
-  </md-card-content>
-
-</md-card>
 
 
 
-
+</div>

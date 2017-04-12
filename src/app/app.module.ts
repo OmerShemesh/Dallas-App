@@ -8,8 +8,12 @@ import 'hammerjs';
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { GeneralStatisticsModule } from './general-statistics/general-statistics.module';
 import { SharedModule } from './shared.module';
+
+import { GeneralStatisticsModule } from './general-statistics/general-statistics.module';
+
+
+
 
 
 @NgModule({
@@ -24,7 +28,7 @@ import { SharedModule } from './shared.module';
     SharedModule,
     routing,
     BrowserAnimationsModule,
-    GeneralStatisticsModule,
+    GeneralStatisticsModule
   ],
   bootstrap: [AppComponent]
 })

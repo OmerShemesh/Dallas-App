@@ -2,7 +2,7 @@
     width: 400px;
     margin: 10px 10px 10px 10px;
     
-
+    align-self: flex-start;
 }
 
 md-sidenav{
@@ -23,5 +23,5 @@ md-sidenav{
 
 .active{
     color:#1976d2 ;   
-    font-weight: bold;     
+    font-weight: bold;   
 }

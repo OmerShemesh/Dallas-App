@@ -1,35 +1,37 @@
-<md-card style="align-self: flex-start; "  class="stats-card">
+<div fxLayoutWrap>
+  <md-card class="stats-card">
 
-  <md-card-content>
+    <md-card-content>
 
-    <md-list>
-      <h3 md-subheader>Facts</h3>
-      <md-list-item>
-        <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-        <p>{{statistics.storage_count}} Storage Domains are currently stored in the system.</p>
-      </md-list-item>
-      <md-list-item>
-        <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-        <p>On average, {{statistics.average_disk_usage}}% of each Storage Domain's disk size is being used.</p>
-      </md-list-item>
-    </md-list>
+      <md-list>
+        <h3 md-subheader>Facts</h3>
+        <md-list-item>
+          <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+          <p>{{statistics.storage_count}} Storage Domains are currently stored in the system.</p>
+        </md-list-item>
+        <md-list-item>
+          <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+          <p>On average, {{statistics.average_disk_usage}}% of each Storage Domain's disk size is being used.</p>
+        </md-list-item>
+      </md-list>
 
 
-  </md-card-content>
-</md-card>
+    </md-card-content>
+  </md-card>
 
-<md-card class="stats-card">
-  <md-card-content>
+  <md-card class="stats-card">
+    <md-card-content>
 
-    <md-list>
-      <h3 align="center" md-subheader>Storage Types Distribution</h3>
+      <md-list>
+        <h3 align="center" md-subheader>Storage Types Distribution</h3>
 
-    </md-list>
-    <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [data]="data.storageTypesData" [labels]="labels.storageTypesLabels" [chartType]="'pie'"
-      [options]="chartOptions">
-    </canvas>
+      </md-list>
+      <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [data]="data.storageTypesData" [labels]="labels.storageTypesLabels"
+        [chartType]="'pie'" [options]="chartOptions">
+      </canvas>
 
-  </md-card-content>
+    </md-card-content>
 
-</md-card>
+  </md-card>
 
+</div>

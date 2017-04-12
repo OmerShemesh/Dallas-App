@@ -10,29 +10,17 @@ import { StatisticsService } from '../statistics.service';
 })
 export class GeneralStatisticsComponent implements OnInit {
 
-  statistics: any;
-  labels = [];
-  data = [];
-  ready: boolean = false;
-
   options = [
-    { value: 'setups', viewValue: "Setups" },
-    { value: 'datacenters', viewValue: "Data Centers" },
-    { value: 'clusters', viewValue: "Clusters" },
-    { value: 'hosts', viewValue: "Hosts" },
-    { value: 'vms', viewValue: "Virtual Machines" },
-    { value: 'storage', viewValue: "Storage" }
+    { value: 'setups', viewValue: "Setups", url:"setup" },
+    { value: 'datacenters', viewValue: "Data Centers", url:"dc" },
+    { value: 'clusters', viewValue: "Clusters", url:"cluster" },
+    { value: 'hosts', viewValue: "Hosts", url:"host" },
+    { value: 'vms', viewValue: "Virtual Machines", url:"vm" },
+    { value: 'storage', viewValue: "Storage", url:"storage" }
   ];
 
-  selectedOption: string = "setups";
 
-  constructor(private route: ActivatedRoute, private statisticsService: StatisticsService) { }
-
-
-
-  onSelect(val) {
-    this.selectedOption = val;
-  }
+  constructor() { }
 
   ngOnInit() {
     

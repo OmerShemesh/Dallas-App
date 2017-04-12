@@ -1,11 +1,11 @@
 <div fxLayout="row" fxFill>
     <!--<md-sidenav-container class="content">
         <md-sidenav mode="side"  opened="true">-->
-            <md-nav-list fxLayout="column" class="navList" fxFlex="20">
+            <md-nav-list fxLayout="column" fxFlex="20">
 
-                <div *ngFor="let option of options">
-                    <md-list-item  [ngClass]="{'active':selectedOption==option.value}" (click)="onSelect(option.value)">
-                    {{option.viewValue}}
+                <div *ngFor="let option of options" >
+                    <md-list-item [routerLink]="option.url" routerLinkActive="active">
+                        {{option.viewValue}}       
                     </md-list-item>
                     <md-divider></md-divider>
                 </div>
@@ -18,16 +18,7 @@
     </md-si*ngIf="selectedOption == 'setups'"denav-container>-->
 
 
-    <div >
-        <setup fxLayoutWrap *ngIf="selectedOption == 'setups'"></setup>
-        <data-center  fxLayoutWrap *ngIf="selectedOption == 'datacenters'"></data-center>
-        <cluster fxLayoutWrap *ngIf="selectedOption == 'clusters'"></cluster>
-        <host  fxLayoutWrap *ngIf="selectedOption == 'hosts'"></host>
-        <virtual-machine  fxLayoutWrap *ngIf="selectedOption == 'vms'"></virtual-machine>
-        <storage  fxLayoutWrap *ngIf="selectedOption == 'storage'"></storage>
-
-
-    </div>
+   <router-outlet></router-outlet>
 
 </div>
 
