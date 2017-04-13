@@ -13,6 +13,10 @@
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+          <p>The maximun memory size found in a Host: {{statistics.max_mem_size}}MB.</p>
+        </md-list-item>
+        <md-list-item>
+          <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
           <p>On average, {{statistics.average_cpu_usage}}% of each Host's cpu is being used.</p>
         </md-list-item>
         <md-list-item>
@@ -21,7 +25,15 @@
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>On average, {{statistics.average_running_vms}} Virtual Machines are running on each Host .</p>
+          <p>The maximum memory usage found in a Host: {{statistics.max_mem_usage}}%.</p>
+        </md-list-item>
+        <md-list-item>
+          <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+          <p>On average, {{statistics.average_running_vms}} Virtual Machines are running on each Host.</p>
+        </md-list-item>
+        <md-list-item>
+          <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
+          <p>The maximum number of running Virtual Machines found in Host: {{statistics.max_running_vms}}.</p>
         </md-list-item>
       </md-list>
     </md-card-content>
