@@ -17,17 +17,20 @@ export class HostComponent implements OnInit {
     average_running_vms: {},
     cpu_cores: {},
     cpus: {},
-    hosts_count: {}
+    hosts_count: {},
+    os_types: {}
   };
 
   data = {
     cpuData: [],
-    coresData: []
+    coresData: [],
+    osTypesData: [],
   }
 
   labels = {
     cpuLabels: [],
-    coresLables: []
+    coresLables: [],
+    osTypesLabels: []
   }
 
   chartOptions = {
@@ -69,8 +72,12 @@ export class HostComponent implements OnInit {
       for (let key of keys) {
         this.data.coresData.push(statistics.cpu_cores[key]);
       }
-
       this.labels.coresLables = this.labels.coresLables.map(label => label + " Cores");
+
+      keys = this.labels.osTypesLabels = Object.keys(statistics.os_types);
+      for(let key of keys){
+        this.data.osTypesData.push(statistics.os_types[key]);
+      }
 
       this.ready = true;
     });
