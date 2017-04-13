@@ -17,6 +17,7 @@ export class StorageComponent implements OnInit {
   };
   statistics = {
     average_disk_usage: {},
+    max_disk_usage:{},
     storage_count: {},
     storage_types: {}
   };

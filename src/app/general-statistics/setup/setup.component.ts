@@ -19,9 +19,11 @@ export class SetupComponent implements OnInit {
     average_clusters_count: {},
     average_dcs_count: {},
     average_hosts_count: {},
+    average_vms_count: {},
     max_clusters_count: {},
     max_dcs_count: {},
     max_hosts_count: {},
+    max_vms_count: {},
     setups_count: {}
   };
   chartOptions = {

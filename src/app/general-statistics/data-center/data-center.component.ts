@@ -15,7 +15,14 @@ export class DataCenterComponent implements OnInit {
   };
   statistics = {
     average_clusters_count: {},
-    datacenters_count: {}
+    average_storage_count:{},
+    average_networks_count: {},
+    max_clusters_count: {},
+    max_storage_count:{},
+    max_networks_count: {},
+    datacenters_count: {},
+
+    
   };
 
   chartOptions = {

@@ -23,6 +23,7 @@ export class VirtualMachineComponent implements OnInit {
     average_cpu_usage: {},
     average_mem_size: {},
     average_mem_usage: {},
+    max_mem_size:{},
     display_types: {},
     os_types: {},
     vms_count: {}

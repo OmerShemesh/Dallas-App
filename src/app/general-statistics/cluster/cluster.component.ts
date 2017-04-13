@@ -12,6 +12,8 @@ export class ClusterComponent implements OnInit {
   statistics = {
     average_hosts_count: {},
     average_vms_count: {},
+    max_hosts_count:{},
+    max_vms_count: {},
     clusters_count: {},
     ovirt_versions: {}
   };
