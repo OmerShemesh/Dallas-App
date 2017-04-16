@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { StatisticsService } from "../../statistics.service";
+import { flyIn } from '../../animations';
 
 @Component({
   selector: 'host',
   templateUrl: './host.component.html',
-  styleUrls: ['./host.component.css']
+  styleUrls: ['./host.component.css'],
+  animations:[flyIn]
 })
 export class HostComponent implements OnInit {
 

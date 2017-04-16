@@ -1,11 +1,17 @@
+import { NgModule,ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ModuleWithProviders } from '@angular/core';
 import { VirtualMachineComponent } from './virtual-machine.component';
+
+
 
 const virtualMachineRoutes: Routes = [
   { path: '', component: VirtualMachineComponent }
 ];
 
 
-export const routing: ModuleWithProviders = RouterModule.forChild(virtualMachineRoutes);
+@NgModule({
+    imports:[RouterModule.forChild(virtualMachineRoutes)],
+    exports:[RouterModule]
+})
+export class VirtualMachineRoutingModule{}
 

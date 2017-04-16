@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import {RouterModule} from '@angular/router';
+
 import { SharedModule } from '../shared.module';
+
 import { GeneralStatisticsComponent } from './general-statistics.component';
-import { routing } from './general-statistics.routing';
+import { GeneralStatisticsRoutingModule } from './general-statistics.routing';
 
 import { SetupModule } from './setup/setup.module';
 import { DataCenterModule } from './data-center/data-center.module';
@@ -15,7 +16,7 @@ import { StorageModule } from './storage/storage.module';
 @NgModule({
   imports: [
     SharedModule,
-    routing,
+    GeneralStatisticsRoutingModule,
     SetupModule,
     DataCenterModule,
     ClusterModule,

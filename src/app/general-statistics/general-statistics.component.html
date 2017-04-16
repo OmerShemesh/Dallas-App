@@ -1,34 +1,13 @@
 <div fxLayout="row" fxFill>
-    <!--<md-sidenav-container class="content">
-        <md-sidenav mode="side"  opened="true">-->
-            <md-nav-list fxLayout="column" fxFlex="20">
-
-                <div *ngFor="let option of options" >
-                    <md-list-item [routerLink]="option.url" routerLinkActive="active">
-                        {{option.viewValue}}       
-                    </md-list-item>
-                    <md-divider></md-divider>
-                </div>
-                
-
-                
-            </md-nav-list>
-        <!--</md-sidenav>
-
-    </md-si*ngIf="selectedOption == 'setups'"denav-container>-->
-
-    <div style="overflow-y:">
-         <router-outlet ></router-outlet>
+    <md-nav-list fxLayout="column" fxFlex="15">
+        <div *ngFor="let option of options">
+            <md-list-item [routerLink]="option.url" routerLinkActive="active">
+                {{option.viewValue}}
+            </md-list-item>
+            <md-divider></md-divider>
+        </div>
+    </md-nav-list>
+    <div>
+        <router-outlet></router-outlet>
     </div>
-  
-
 </div>
-
-
-
-
-
-
-
-
-

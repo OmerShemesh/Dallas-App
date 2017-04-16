@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { StatisticsService } from "../../statistics.service";
+import { flyIn } from '../../animations';
 
 @Component({
   selector: 'data-center',
   templateUrl: './data-center.component.html',
-  styleUrls: ['./data-center.component.css']
+  styleUrls: ['./data-center.component.css'],
+  animations: [flyIn]
 })
 export class DataCenterComponent implements OnInit {
 

@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { StatisticsService } from '../../statistics.service';
+import { flyIn } from '../../animations';
+
 
 @Component({
   selector: 'setup',
   templateUrl: './setup.component.html',
-  styleUrls: ['./setup.component.css']
+  styleUrls: ['./setup.component.css'],
+  animations:[flyIn]
 })
 export class SetupComponent implements OnInit {
 

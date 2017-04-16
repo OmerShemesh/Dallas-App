@@ -4,7 +4,7 @@ import { StatisticsService } from '../statistics.service';
 
 
 @Component({
-  selector: 'app-general-statistics',
+  selector: 'general-statistics',
   templateUrl: './general-statistics.component.html',
   styleUrls: ['./general-statistics.component.css']
 })

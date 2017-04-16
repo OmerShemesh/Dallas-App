@@ -1,10 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { StatisticsService } from "../../statistics.service";
+import { flyIn } from '../../animations';
+
+
 
 @Component({
   selector: 'storage',
   templateUrl: './storage.component.html',
-  styleUrls: ['./storage.component.css']
+  styleUrls: ['./storage.component.css'],
+  animations:[
+    flyIn
+  ]
 })
 export class StorageComponent implements OnInit {
 

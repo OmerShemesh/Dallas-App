@@ -1,11 +1,15 @@
 import { Routes, RouterModule } from '@angular/router';
-import { ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { DataCenterComponent } from './data-center.component';
 
 const dataCentersRoutes: Routes = [
   { path: '', component: DataCenterComponent }
 ];
 
+@NgModule({
+    imports:[RouterModule.forChild(dataCentersRoutes)],
+    exports:[RouterModule]
+})
+export class DataCenterRoutingModule{}
 
-export const routing: ModuleWithProviders = RouterModule.forChild(dataCentersRoutes);
 

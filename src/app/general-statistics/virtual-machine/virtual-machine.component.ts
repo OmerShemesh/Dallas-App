@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { StatisticsService } from "../../statistics.service";
-import 'rxjs/add/operator/finally';
+import { flyIn } from '../../animations';
+
 
 @Component({
   selector: 'virtual-machine',
   templateUrl: './virtual-machine.component.html',
-  styleUrls: ['./virtual-machine.component.css']
+  styleUrls: ['./virtual-machine.component.css'],
+  animations: [
+    flyIn
+  ]
+
 })
 export class VirtualMachineComponent implements OnInit {
 
@@ -23,7 +28,7 @@ export class VirtualMachineComponent implements OnInit {
     average_cpu_usage: {},
     average_mem_size: {},
     average_mem_usage: {},
-    max_mem_size:{},
+    max_mem_size: {},
     display_types: {},
     os_types: {},
     vms_count: {}
@@ -45,7 +50,7 @@ export class VirtualMachineComponent implements OnInit {
     }
   };
 
-   displayTypesChartOptions = {
+  displayTypesChartOptions = {
     legend: {
       display: true
     },
@@ -77,7 +82,7 @@ export class VirtualMachineComponent implements OnInit {
         this.data.osTypesData.push(statistics.os_types[key]);
       }
 
-      
+
       keys = this.labels.displayTypesLabels = Object.keys(statistics.display_types);
       for (let key of keys) {
         this.data.displayTypesData.push(statistics.display_types[key]);

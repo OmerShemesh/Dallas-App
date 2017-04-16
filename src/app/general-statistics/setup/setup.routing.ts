@@ -1,5 +1,5 @@
 import { Routes, RouterModule } from '@angular/router';
-import { ModuleWithProviders } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { SetupComponent } from './setup.component';
 
 const setupRoutes: Routes = [
@@ -7,5 +7,9 @@ const setupRoutes: Routes = [
 ];
 
 
-export const routing: ModuleWithProviders = RouterModule.forChild(setupRoutes);
+@NgModule({
+    imports:[RouterModule.forChild(setupRoutes)],
+    exports:[RouterModule]
+})
+export class SetupRoutingModule{}
 

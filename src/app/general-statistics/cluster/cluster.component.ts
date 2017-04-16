@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { StatisticsService } from "../../statistics.service";
+import { flyIn } from '../../animations';
 
 @Component({
   selector: 'cluster',
   templateUrl: './cluster.component.html',
-  styleUrls: ['./cluster.component.css']
+  styleUrls: ['./cluster.component.css'],
+  animations: [flyIn]
 })
 export class ClusterComponent implements OnInit {
 

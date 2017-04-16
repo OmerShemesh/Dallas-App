@@ -1,4 +1,4 @@
-<div fxLayoutWrap>
+<div fxLayoutWrap [@flyIn]>
   <md-card class="stats-card">
 
     <md-card-content>
@@ -35,7 +35,7 @@
     <md-card-content>
 
       <md-list>
-        <h2 align="center" md-subheader>Clusters oVirt Compatibility Distribution</h2>
+        <h2 align="center" md-subheader>oVirt Version Compatibility Distribution</h2>
 
       </md-list>
       <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [labels]="labels.ovirtCompatibilityLabels"
