@@ -17,12 +17,14 @@ export class VirtualMachineComponent implements OnInit {
 
   labels = {
     osTypesLabels: [],
-    displayTypesLabels: []
+    displayTypesLabels: [],
+    numOfCpusLabels: []
   };
   ready: boolean;
   data = {
     osTypesData: [],
-    displayTypesData: []
+    displayTypesData: [],
+    numOfCpusData: []
   };
   statistics = {
     average_cpu_usage: {},
@@ -31,7 +33,8 @@ export class VirtualMachineComponent implements OnInit {
     max_mem_size: {},
     display_types: {},
     os_types: {},
-    vms_count: {}
+    vms_count: {},
+    num_of_cpus: {}
   };
 
   osTypesChartOptions = {
@@ -88,7 +91,11 @@ export class VirtualMachineComponent implements OnInit {
         this.data.displayTypesData.push(statistics.display_types[key]);
       }
 
-
+      keys = this.labels.numOfCpusLabels = Object.keys(statistics.num_of_cpus)
+      for (let key of keys) {
+        this.data.numOfCpusData.push(statistics.num_of_cpus[key]);
+      }
+      this.labels.numOfCpusLabels = this.labels.numOfCpusLabels.map(label => label + " vCPUs");
 
       this.ready = true;
     });

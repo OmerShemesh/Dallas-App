@@ -46,6 +46,23 @@
     <md-card-content>
 
       <md-list>
+        <h3 align="center" md-subheader># of vCPUs Distribution</h3>
+
+      </md-list>
+      <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' 
+        [labels]="labels.numOfCpusLabels" 
+        [data]="data.numOfCpusData"
+        [chartType]="'doughnut'" 
+        [options]="displayTypesChartOptions">
+      </canvas>
+    </md-card-content>
+
+  </md-card>
+
+  <md-card class="stats-card">
+    <md-card-content>
+
+      <md-list>
         <h2 align="center" md-subheader>Display Types Distribution</h2>
 
       </md-list>

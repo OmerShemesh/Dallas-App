@@ -17,15 +17,18 @@ export class ClusterComponent implements OnInit {
     max_hosts_count:{},
     max_vms_count: {},
     clusters_count: {},
-    ovirt_versions: {}
+    ovirt_versions: {},
+    cpu_families: {}
   };
 
   data = {
-    ovirtCompatibilityData: []
+    ovirtCompatibilityData: [],
+    cpuFamiliesData: []
   };
 
   labels = {
-    ovirtCompatibilityLabels: []
+    ovirtCompatibilityLabels: [],
+    cpuFamiliesLabels: []
   };
 
   chartOptions = {
@@ -60,6 +63,11 @@ export class ClusterComponent implements OnInit {
       this.labels.ovirtCompatibilityLabels = this.labels.ovirtCompatibilityLabels.map(label => "oVirt " + label);
       for (let key of keys) {
         this.data.ovirtCompatibilityData.push(statistics.ovirt_versions[key]);
+      }
+
+      keys = this.labels.cpuFamiliesLabels = Object.keys(statistics.cpu_families);
+      for(let key of keys){
+        this.data.cpuFamiliesData.push(statistics.cpu_families[key]);
       }
 
       this.ready = true;

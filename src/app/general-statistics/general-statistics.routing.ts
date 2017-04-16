@@ -7,7 +7,7 @@ const generalRoutes: Routes = [
         path: '',
         component: GeneralStatisticsComponent,
         children: [
-            { path: '', redirectTo: '/general-statistics/setup', pathMatch: 'full' },
+            { path: '', redirectTo: 'setup', pathMatch: 'full' },
             { path: 'setup', loadChildren: './setup/setup.module#SetupModule' },
             { path: 'dc', loadChildren: './data-center/data-center.module#DataCenterModule' },
             { path: 'cluster', loadChildren: './cluster/cluster.module#ClusterModule' },
