@@ -1,43 +1,43 @@
 <div fxLayoutWrap [@flyIn]>
-  <md-card class="stats-card">
+  <md-card style="width:550px;" class="stats-card">
     <md-card-content>
       <md-list>
         <h3 md-subheader>Facts</h3>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>{{statistics.setups_count}} oVirt Setups are currently stored in the system.</p>
+          <p><span class="numeric-stat">{{statistics.setups_count}}</span> oVirt Setups are currently stored in the system.</p>
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>On average, each oVirt Setup contains {{statistics.average_dcs_count}} Data Centers.</p>
+          <p>On average, each oVirt Setup contains <span class="numeric-stat">{{statistics.average_dcs_count}}</span> Data Centers.</p>
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>The maximum number of Data Centers found in a setup: {{statistics.max_dcs_count}}.</p>
+          <p>The maximum number of Data Centers found in a Setup: <span class="numeric-stat">{{statistics.max_dcs_count}}</span>.</p>
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>On average, each oVirt Setup contains {{statistics.average_clusters_count}} Clusters.</p>
+          <p>On average, each oVirt Setup contains <span class="numeric-stat">{{statistics.average_clusters_count}}</span> Clusters.</p>
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>The maximum number of Clusters found in a setup: {{statistics.max_clusters_count}}.</p>
+          <p>The maximum number of Clusters found in a Setup: <span class="numeric-stat">{{statistics.max_clusters_count}}</span>.</p>
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>On average, each oVirt Setup contains {{statistics.average_hosts_count}} Hosts.</p>
+          <p>On average, each oVirt Setup contains <span class="numeric-stat">{{statistics.average_hosts_count}}</span> Hosts.</p>
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>The maximum number of Hosts found in a setup: {{statistics.max_hosts_count}}.</p>
+          <p>The maximum number of Hosts found in a Setup: <span class="numeric-stat">{{statistics.max_hosts_count}}</span>.</p>
         </md-list-item>
           <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>On average, each oVirt Setup contains {{statistics.average_vms_count}} Virtual Machines.</p>
+          <p>On average, each oVirt Setup contains <span class="numeric-stat">{{statistics.average_vms_count}}</span> Virtual Machines.</p>
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>The maximum number of Virtual Machines found in a setup: {{statistics.max_vms_count}}.</p>
+          <p>The maximum number of Virtual Machines found in a Setup: <span class="numeric-stat">{{statistics.max_vms_count}}</span>.</p>
         </md-list-item>
 
       </md-list>

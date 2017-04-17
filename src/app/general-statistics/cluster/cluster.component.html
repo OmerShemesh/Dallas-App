@@ -1,5 +1,5 @@
 <div fxLayoutWrap [@flyIn]>
-  <md-card class="stats-card">
+  <md-card fxFlex="50" class="stats-card">
 
     <md-card-content>
 
@@ -7,23 +7,23 @@
         <h2 md-subheader>Facts</h2>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p> {{statistics.clusters_count}} Clusters are currently stored in the system.</p>
+          <p> <span class="numeric-stat">{{statistics.clusters_count}}</span> Clusters are currently stored in the system.</p>
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>On average, each Cluster contains {{statistics.average_hosts_count}} Hosts.</p>
+          <p>On average, each Cluster contains <span class="numeric-stat">{{statistics.average_hosts_count}}</span> Hosts.</p>
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>The maximum number of Hosts found in a Cluster: {{statistics.max_hosts_count}}.</p>
+          <p>The maximum number of Hosts found in a Cluster: <span class="numeric-stat">{{statistics.max_hosts_count}}</span>.</p>
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>On average, each Cluster contains {{statistics.average_vms_count}} Virtual Machines.</p>
+          <p>On average, each Cluster contains <span class="numeric-stat">{{statistics.average_vms_count}}</span> Virtual Machines.</p>
         </md-list-item>
-          <md-list-item>
+        <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>The maximum number of Virtual Machines found in a Cluster: {{statistics.max_vms_count}}.</p>
+          <p>The maximum number of Virtual Machines found in a Cluster: <span class="numeric-stat">{{statistics.max_vms_count}}</span>.</p>
         </md-list-item>
       </md-list>
 

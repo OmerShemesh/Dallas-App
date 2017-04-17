@@ -1,34 +1,36 @@
-<div fxLayoutWrap [@flyIn]>
-  <md-card class="stats-card">
+<div fxLayout="row" fxLayoutWrap [@flyIn]>
+  <md-card style="width:550px;" class="stats-card">
     <md-list>
       <h3 md-subheader>Facts</h3>
       <md-list-item>
         <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-        <p> {{statistics.datacenters_count}} Data Centers are currently stored in the system.</p>
+        <p> <span class="numeric-stat">{{statistics.datacenters_count}}</span> Data Centers are currently stored in the system.</p>
       </md-list-item>
       <md-list-item>
         <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-        <p>On average, each Data Center contains {{statistics.average_clusters_count}} Clusters.</p>
+        <p>On average, each Data Center contains <span class="numeric-stat">{{statistics.average_clusters_count}}</span> Clusters.</p>
       </md-list-item>
       <md-list-item>
         <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-        <p>The maximum number of Clusters found in a Data Center: {{statistics.max_clusters_count}}.</p>
+        <p>The maximum number of Clusters found in a Data Center: <span class="numeric-stat">{{statistics.max_clusters_count}}</span>.</p>
       </md-list-item>
       <md-list-item>
         <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-        <p>On average, each Data Center contains {{statistics.average_networks_count}} Logical Networks.</p>
+        <p>On average, each Data Center contains <span class="numeric-stat">{{statistics.average_networks_count}}</span> Logical
+          Networks.</p>
       </md-list-item>
       <md-list-item>
         <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-        <p>The maximum number of Logical Networks found in a Data Center: {{statistics.max_networks_count}}.</p>
+        <p>The maximum number of Logical Networks found in a Data Center: <span class="numeric-stat">{{statistics.max_networks_count}}</span>.</p>
       </md-list-item>
       <md-list-item>
         <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-        <p>On average, each Data Center contains {{statistics.average_storage_count}} Storage Domains.</p>
+        <p>On average, each Data Center contains <span class="numeric-stat">{{statistics.average_storage_count}}</span> Storage
+          Domains.</p>
       </md-list-item>
       <md-list-item>
         <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-        <p>The maximum number of Storage Domains found in a Data Center: {{statistics.max_storage_count}}.</p>
+        <p>The maximum number of Storage Domains found in a Data Center: <span class="numeric-stat">{{statistics.max_storage_count}}</span>.</p>
       </md-list-item>
     </md-list>
   </md-card>

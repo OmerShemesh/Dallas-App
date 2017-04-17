@@ -7,15 +7,15 @@
         <h3 md-subheader>Facts</h3>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>{{statistics.storage_count}} Storage Domains are currently stored in the system.</p>
+          <p><span class="numeric-stat">{{statistics.storage_count}}</span> Storage Domains are currently stored in the system.</p>
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>On average, {{statistics.average_disk_usage}}% of each Storage Domain's disk size is being used.</p>
+          <p>On average, <span class="numeric-stat">{{statistics.average_disk_usage}}%</span> of each Storage Domain's disk size is being used.</p>
         </md-list-item>
          <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>The maximum disk usage found in Storage Domain: {{statistics.max_disk_usage}}%.</p>
+          <p>The maximum disk usage found in Storage Domain: <span class="numeric-stat">{{statistics.max_disk_usage}}%</span>.</p>
         </md-list-item>
       </md-list>
 

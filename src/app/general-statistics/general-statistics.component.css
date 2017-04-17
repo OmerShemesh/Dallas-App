@@ -7,20 +7,22 @@
 
 md-sidenav{
     width: 320px;
+    
 }
 
-
+/deep/md-list-item p{
+    font-size:15px;
+}
 
 /deep/.icon-10{
-    font-size: 14px;
-    margin-right: -8px;
-    margin-top: 5px;
-}
-/deep/ p{
-    font-weight: 500;
+    font-size: 12px;
+
 }
 
-
+/deep/.numeric-stat{
+    font-weight:bold;
+    font-size:18px;
+}
 .active{
     color:#1976d2 ;   
     font-weight: bold;   
