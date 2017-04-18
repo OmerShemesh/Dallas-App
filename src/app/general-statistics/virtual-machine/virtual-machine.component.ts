@@ -30,11 +30,15 @@ export class VirtualMachineComponent implements OnInit {
     average_cpu_usage: {},
     average_mem_size: {},
     average_mem_usage: {},
+    average_nics_count: {},
+    average_disks_count:{},
     max_mem_size: {},
+    max_nics_count: {},
+    max_disks_count:{},
     display_types: {},
     os_types: {},
     vms_count: {},
-    num_of_cpus: {}
+    num_of_cpus: {},
   };
 
   osTypesChartOptions = {

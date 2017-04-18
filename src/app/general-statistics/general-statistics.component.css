@@ -16,12 +16,15 @@ md-sidenav{
 
 /deep/.icon-10{
     font-size: 12px;
+    margin-top: 25px;
+    margin-right:-5px;
 
 }
 
 /deep/.numeric-stat{
     font-weight:bold;
     font-size:18px;
+    color: orangered;
 }
 .active{
     color:#1976d2 ;   
