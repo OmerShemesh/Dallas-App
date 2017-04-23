@@ -1,8 +1,11 @@
 <div fxLayoutWrap [@flyIn]>
-  <md-card style="width:550px;" class="stats-card">
+  <md-card fxFlex="40"  class="stats-card facts-card">
+
+    <md-card-header>
+       <md-card-subtitle>Facts</md-card-subtitle>
+    </md-card-header>
     <md-card-content>
-      <md-list>
-        <h3 md-subheader>Facts</h3>
+      <md-list class="facts-list">
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
           <p><span class="numeric-stat">{{statistics.setups_count}}</span> oVirt Setups are currently stored in the system.</p>

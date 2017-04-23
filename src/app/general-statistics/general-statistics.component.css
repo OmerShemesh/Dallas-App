@@ -1,8 +1,15 @@
 /deep/ .stats-card{
     width: 400px;
     margin: 10px 10px 10px 10px;
-    
-    align-self: flex-start;
+}
+
+/deep/ .facts-card{
+    height:390px;
+}
+
+/deep/ .facts-list{
+    overflow-y:auto;
+    height:300px;
 }
 
 md-sidenav{

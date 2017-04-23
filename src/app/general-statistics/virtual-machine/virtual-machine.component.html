@@ -1,33 +1,39 @@
 <div fxLayoutWrap [@flyIn]>
-  <md-card fxFlex="50" class="stats-card">
+  <md-card fxFlex="40" class="stats-card facts-card">
+    <md-card-header>
+      <md-card-subtitle>Facts</md-card-subtitle>
+    </md-card-header>
     <md-card-content>
-      <md-list>
-        <h3 md-subheader>Facts</h3>
+      <md-list class="facts-list">
+
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
           <p><span class="numeric-stat">{{statistics.vms_count}}</span> Virtual Machines are currently stored in the system.</p>
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>On average, each Virtual Machine has <span class="numeric-stat">{{statistics.average_mem_size}}MB</span> of memory size.</p>
+          <p>On average, each Virtual Machine has <span class="numeric-stat">{{statistics.average_mem_size}}MB</span> of memory
+            size.</p>
         </md-list-item>
-         <md-list-item>
+        <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
           <p>The maximum memory size found in a Virtual Machine: <span class="numeric-stat">{{statistics.max_mem_size}}MB</span>.</p>
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>On average, <span class="numeric-stat">{{statistics.average_mem_usage}}%</span> of each Virtual Machine's memory is being used.</p>
+          <p>On average, <span class="numeric-stat">{{statistics.average_mem_usage}}%</span> of each Virtual Machine's memory
+            is being used.</p>
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>On average, <span class="numeric-stat">{{statistics.average_cpu_usage}}%</span> of each Virtual Machine's cpu is being used.</p>
+          <p>On average, <span class="numeric-stat">{{statistics.average_cpu_usage}}%</span> of each Virtual Machine's cpu is
+            being used.</p>
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
           <p>On average, each Virtual Machine has <span class="numeric-stat">{{statistics.average_nics_count}}</span> NICs.</p>
         </md-list-item>
-         <md-list-item>
+        <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
           <p>The maximum number of NICs found in a Virtual Machine: <span class="numeric-stat">{{statistics.max_nics_count}}</span>.</p>
         </md-list-item>
@@ -35,7 +41,7 @@
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
           <p>On average, each Virtual Machine has <span class="numeric-stat">{{statistics.average_disks_count}}</span> disks.</p>
         </md-list-item>
-         <md-list-item>
+        <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
           <p>The maximum number of disks found in a Virtual Machine: <span class="numeric-stat">{{statistics.max_disks_count}}</span>.</p>
         </md-list-item>
@@ -65,11 +71,8 @@
         <h3 align="center" md-subheader># of vCPUs Distribution</h3>
 
       </md-list>
-      <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' 
-        [labels]="labels.numOfCpusLabels" 
-        [data]="data.numOfCpusData"
-        [chartType]="'doughnut'" 
-        [options]="displayTypesChartOptions">
+      <canvas *ngIf="ready" baseChart width=326 height=240 style='width:326px;height:240px' [labels]="labels.numOfCpusLabels" [data]="data.numOfCpusData"
+        [chartType]="'doughnut'" [options]="displayTypesChartOptions">
       </canvas>
     </md-card-content>
 

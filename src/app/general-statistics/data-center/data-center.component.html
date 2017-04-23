@@ -1,7 +1,10 @@
-<div fxLayout="row" fxLayoutWrap [@flyIn]>
-  <md-card style="width:550px;" class="stats-card">
-    <md-list>
-      <h3 md-subheader>Facts</h3>
+<div [@flyIn]>
+  <md-card fxFlex="40" class="stats-card facts-card">
+    <md-card-header>
+      <md-card-subtitle>Facts</md-card-subtitle>
+    </md-card-header>
+    <md-list class="facts-list">
+
       <md-list-item>
         <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
         <p> <span class="numeric-stat">{{statistics.datacenters_count}}</span> Data Centers are currently stored in the system.</p>
@@ -17,7 +20,8 @@
       <md-list-item>
         <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
         <p>On average, each Data Center contains <span class="numeric-stat">{{statistics.average_networks_count}}</span> Logical
-          Networks.</p>
+          Networks.
+        </p>
       </md-list-item>
       <md-list-item>
         <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
@@ -26,7 +30,8 @@
       <md-list-item>
         <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
         <p>On average, each Data Center contains <span class="numeric-stat">{{statistics.average_storage_count}}</span> Storage
-          Domains.</p>
+          Domains.
+        </p>
       </md-list-item>
       <md-list-item>
         <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>

@@ -7,7 +7,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class StatisticsService {
 
-  private API_URL = 'http://localhost:5000';
+  private API_URL = 'http://localhost:5000/api';
   constructor(private http:Http) { }
 
   getGeneralStatistics(statsFor: string):Observable<any>{
@@ -15,14 +15,14 @@ export class StatisticsService {
     let params: URLSearchParams = new URLSearchParams();
     let requestOptions: RequestOptions = new RequestOptions();
 
-    if(statsFor === "")
-    {
-      return this.http.get(this.API_URL + '/statistics/general')
-                .map((response:Response) => response.json())
-                .catch(this.handleError);
-    }
-    else
-    {
+    // if(statsFor === "")
+    // {
+    //   return this.http.get(this.API_URL + '/statistics/general')
+    //             .map((response:Response) => response.json())
+    //             .catch(this.handleError);
+    // }
+    // else
+    // {
       params.set('stats_for',statsFor);
 
       requestOptions.search = params;
@@ -30,7 +30,7 @@ export class StatisticsService {
       return this.http.get(this.API_URL + '/statistics/general',requestOptions)
                 .map((response:Response) => response.json())
                 .catch(this.handleError);
-    }
+   // }
 
     
   }

@@ -1,19 +1,22 @@
 <div fxLayoutWrap [@flyIn]>
-  <md-card class="stats-card">
+  <md-card fxFlex="40" class="stats-card facts-card">
 
+    <md-card-header>
+      <md-card-subtitle>Facts</md-card-subtitle>
+    </md-card-header>
     <md-card-content>
 
-      <md-list>
-        <h3 md-subheader>Facts</h3>
+      <md-list class="facts-list">
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
           <p><span class="numeric-stat">{{statistics.storage_count}}</span> Storage Domains are currently stored in the system.</p>
         </md-list-item>
         <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
-          <p>On average, <span class="numeric-stat">{{statistics.average_disk_usage}}%</span> of each Storage Domain's disk size is being used.</p>
+          <p>On average, <span class="numeric-stat">{{statistics.average_disk_usage}}%</span> of each Storage Domain's disk
+            size is being used.</p>
         </md-list-item>
-         <md-list-item>
+        <md-list-item>
           <md-icon class="icon-10" md-list-avatar>arrow_forward</md-icon>
           <p>The maximum disk usage found in Storage Domain: <span class="numeric-stat">{{statistics.max_disk_usage}}%</span>.</p>
         </md-list-item>

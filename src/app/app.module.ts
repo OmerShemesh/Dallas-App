@@ -14,8 +14,6 @@ import { GeneralStatisticsModule } from './general-statistics/general-statistics
 
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
