@@ -26,7 +26,6 @@ import { GeneralStatisticsModule } from './general-statistics/general-statistics
     SharedModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    GeneralStatisticsModule
   ],
   bootstrap: [AppComponent]
 })

@@ -35,6 +35,12 @@ export class StatisticsService {
     
   }
 
+  getSetups():Observable<any>{
+    return this.http.get(this.API_URL + '/statistics/setups')
+              .map((response:Response)=>response.json())
+              .catch(this.handleError); 
+  }
+
   private handleError (error: Response | any) {
     let errMsg: string;
     if (error instanceof Response) {

@@ -1,5 +1,4 @@
 import { Routes, RouterModule } from '@angular/router';
-import { GeneralStatisticsComponent } from './general-statistics';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { NotFoundComponent } from './not-found/not-found.component';
 
@@ -9,6 +8,10 @@ const appRoutes: Routes = [
     {
         path: 'general-statistics',
         loadChildren:'./general-statistics/general-statistics.module#GeneralStatisticsModule'
+    },
+    {  
+        path:'setups',
+        loadChildren: './setups/setups.module#SetupsModule'
     },
     { path: '**', component: NotFoundComponent }
 ]

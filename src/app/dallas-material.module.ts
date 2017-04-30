@@ -5,7 +5,10 @@ import {
   MdListModule,
   MdButtonModule,
   MdSidenavModule,
-  MdToolbarModule
+  MdToolbarModule,
+  MdRippleModule,
+  MdDialogModule,
+  MdInputModule
 } from '@angular/material';
 
 
@@ -17,6 +20,9 @@ import {
     MdButtonModule,
     MdSidenavModule,
     MdToolbarModule,
+    MdRippleModule,
+    MdDialogModule,
+    MdInputModule
   ],
   exports: [
     MdCardModule,
@@ -24,7 +30,10 @@ import {
     MdListModule,
     MdButtonModule,
     MdSidenavModule,
-    MdToolbarModule
+    MdToolbarModule,
+    MdRippleModule,
+    MdDialogModule,
+    MdInputModule
   ],
   declarations: []
 })

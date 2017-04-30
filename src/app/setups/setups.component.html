@@ -1,0 +1,15 @@
+<div fxFill fxLayout="column">
+    <md-input-container style="width:200px; margin-left: 10px">
+        <input [disabled]="!ready" mdInput placeholder="Search for a Setup..." [(ngModel)]="searchText">
+    </md-input-container>
+    <div fxLayout="row">
+        <md-card style="cursor: pointer;" md-ripple (click)="displaySetupDetails(setup)" *ngFor="let setup of setups | searchSetup:searchText" class="setup-card">
+            <md-card-header>
+                <md-icon md-card-avatar>storage</md-icon>
+                <md-card-title>{{setup._id}}</md-card-title>
+
+            </md-card-header>
+
+        </md-card>
+    </div>
+</div>
