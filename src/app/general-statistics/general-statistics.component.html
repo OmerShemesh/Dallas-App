@@ -2,7 +2,7 @@
     <md-nav-list fxLayout="column" fxFlex="15">
         <div *ngFor="let option of options">
             <md-list-item [routerLink]="option.url" routerLinkActive="active">
-                {{option.viewValue}}
+                <img src="./assets/icons/{{option.url}}.svg" style="margin-right: 5px; width:20px;height:20px;">{{option.viewValue}}
             </md-list-item>
             <md-divider></md-divider>
         </div>

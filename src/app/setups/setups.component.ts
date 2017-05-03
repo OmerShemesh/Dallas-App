@@ -41,7 +41,7 @@ export class SetupsComponent implements OnInit {
 })
 export class SetupDetailComponent{
     setup:any;
-    constructor(@Inject(MD_DIALOG_DATA) private data: { setup: any }){
+    constructor(@Inject(MD_DIALOG_DATA) private data){
         this.setup = this.data.setup;
 
     }
